@@ -9,8 +9,8 @@ const {
     getSalaryById,
     updateSalary,
     deleteSalary,
-    calculateSalary,
-    getAndCalcSalary
+    // calculateSalary,
+    // getAndCalcSalary
    
   } = require("../controller/salary.controller");
   
@@ -40,10 +40,10 @@ const {
   router.delete("/:id", deleteSalary);
 
 
-  router.get("/calculate/:id", calculateSalary);
+//   router.get("/calculate/:id", calculateSalary);
 
 
-  router.get("/calc", getAndCalcSalary);
+//   router.get("/calc", getAndCalcSalary);
 
   
   

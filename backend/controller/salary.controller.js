@@ -94,8 +94,8 @@ const addSalary = async (req, res) => {
     getSalaryById,
     updateSalary,
     deleteSalary,
-    calculateSalary,
-    getAndCalcSalary
+    // calculateSalary,
+    // getAndCalcSalary
 
    
   }
