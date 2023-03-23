@@ -1,22 +1,22 @@
 const Menue = require("../models/menue.model");
 
 const addMenue = async (req, res) => {
-    const { itemCategory, itemName, size, price, onSale} =
-      req.body;
-  
-    const menue = new Menue({
-        itemCategory,
-        itemName,
-        size,
-        price,
-        onSale
-    });
-  
-    await menue
-      .save()
-      .then(() => res.json('Menue added!'))
-      .catch((error) => res.status(400).json("Error: " + error));
-  };
+  const { itemCategory, itemName, size, price, onSale } =
+    req.body;
+
+  const menue = new Menue({
+    itemCategory,
+    itemName,
+    size,
+    price,
+    onSale
+  });
+
+  await menue
+    .save()
+    .then(() => res.json('Menue added!'))
+    .catch((error) => res.status(400).json("Error: " + error));
+};
 
 //   const getEmployees = async (req, res) => {
 //     try {
@@ -45,7 +45,7 @@ const addMenue = async (req, res) => {
 //         existingEmployee.position = req.body.position;
 //         existingEmployee.salary = req.body.salary;
 //         existingEmployee.holidays = req.body.holidays;
-        
+
 //         existingEmployee
 //           .save()
 //           .then(() => res.json('Employee updated!'))
@@ -53,7 +53,7 @@ const addMenue = async (req, res) => {
 //       })
 //       .catch((error) => res.status(400).json("Error: " + error));
 //   };
-  
+
 //   const deleteEmployee = async (req, res) => {
 //     Employee.findByIdAndDelete(req.params.id)
 //       .then((deletedEmployee) => {
@@ -61,12 +61,12 @@ const addMenue = async (req, res) => {
 //       })
 //       .catch((error) => res.status(400).json("Error: " + error));
 //   };
-  
-  module.exports = {
-    addMenue,
-    // getEmployees,
-    // getEmployeeById,
-    // updateEmployee,
-    // deleteEmployee,
-   
-  }
+
+module.exports = {
+  addMenue,
+  // getEmployees,
+  // getEmployeeById,
+  // updateEmployee,
+  // deleteEmployee,
+
+}

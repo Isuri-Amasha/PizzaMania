@@ -11,8 +11,7 @@ const customerSchema = new Schema({
     address : {type : String, required : true},
     
     // workingSchedule : {type: mongoose.Schema.Types.ObjectId, ref:'workingSchedule'}
-    
-     
+
 },{
         timestamps : true,
     

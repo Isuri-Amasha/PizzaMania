@@ -3,23 +3,23 @@ const { response } = require('express');
 let Customer = require("../models/customer.model");
 
 const {
-    addCustomer,
-    getCustomers,
-    updateCustomer,
-    getCustomerById,
-    deleteCustomer,
-    // scheduleByEmployee
-   
-  } = require("../controller/customer.controller");
+  addCustomer,
+  getCustomers,
+  updateCustomer,
+  getCustomerById,
+  deleteCustomer,
+  // scheduleByEmployee
 
-  router.post("/", addCustomer);
+} = require("../controller/customer.controller");
 
-  router.get("/", getCustomers);
+router.post("/", addCustomer);
 
-  router.get("/:id", getCustomerById);
+router.get("/", getCustomers);
 
-  router.put("/:id", updateCustomer);
+router.get("/:id", getCustomerById);
 
-  router.delete("/:id", deleteCustomer);
+router.put("/:id", updateCustomer);
+
+router.delete("/:id", deleteCustomer);
 
 module.exports = router;

@@ -4,25 +4,25 @@ let workingSchedule = require("../models/workingSchedule.model");
 const workingController = require("./schedule.controller");
 
 const {
-    addSchedule,
-    getSchedules,
-    updateSchedule,
-    getScheduleById,
-    deleteSchedule,
-    scheduleWithEmployee
-   
-  } = require("../controller/workingSchedule.controller");
+  addSchedule,
+  getSchedules,
+  updateSchedule,
+  getScheduleById,
+  deleteSchedule,
+  scheduleWithEmployee
 
-  router.post("/", addSchedule);
+} = require("../controller/workingSchedule.controller");
 
-  router.get("/", getSchedules);
+router.post("/", addSchedule);
 
-  router.put("/:id", updateSchedule);
+router.get("/", getSchedules);
 
-  router.get("/:id", getScheduleById);
+router.put("/:id", updateSchedule);
 
-  router.delete("/:id", deleteSchedule);
+router.get("/:id", getScheduleById);
 
-  router.post('/getByEmployeeId', scheduleWithEmployee)
+router.delete("/:id", deleteSchedule);
 
-  module.exports = router;
+router.post('/getByEmployeeId', scheduleWithEmployee)
+
+module.exports = router;

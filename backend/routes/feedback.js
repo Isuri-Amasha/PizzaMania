@@ -3,31 +3,31 @@ const { response } = require('express');
 let Feedback = require("../models/feedback.model");
 
 const {
-    addFeedback,
-    getFeedbacks,
-    updateFeedback,
-    getFeedbackById,
-    deleteFeedback,
-    FeedbackWithCustomer,
-    FeedbackWithEmployee,
-    // FeedbackWith
-    // scheduleByEmployee
-   
-  } = require("../controller/feedback.controller");
+  addFeedback,
+  getFeedbacks,
+  updateFeedback,
+  getFeedbackById,
+  deleteFeedback,
+  FeedbackWithCustomer,
+  FeedbackWithEmployee,
+  // FeedbackWith
+  // scheduleByEmployee
 
-  router.post("/", addFeedback);
+} = require("../controller/feedback.controller");
 
-  router.get("/", getFeedbacks);
+router.post("/", addFeedback);
 
-  router.get("/:id", getFeedbackById);
+router.get("/", getFeedbacks);
 
-  router.put("/:id", updateFeedback);
+router.get("/:id", getFeedbackById);
 
-  router.delete("/:id", deleteFeedback);
+router.put("/:id", updateFeedback);
 
-  router.post('/getFeedbackWithUser', FeedbackWithCustomer)
+router.delete("/:id", deleteFeedback);
 
-  router.post('/getFeedbackWithEmployee', FeedbackWithEmployee)
+router.post('/getFeedbackWithUser', FeedbackWithCustomer)
+
+router.post('/getFeedbackWithEmployee', FeedbackWithEmployee)
 
 //   router.post('/getFeedbackWith', FeedbackWith)
 
