@@ -55,7 +55,7 @@ const addInventoryOrders = async (req, res) => {
   };
   
   const deleteInventoryOrder = async (req, res) => {
-    InventoryOrder.findByIdAndDelete(req.params.id)
+    InventoryOrders.findByIdAndDelete(req.params.id)
       .then((deletedInventoryOrder) => {
         res.json('Inventory Order deleted');
       })
