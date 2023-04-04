@@ -9,7 +9,7 @@ const productSchema = new Schema({
     productCategory : {type : String,required : true},
     productSize: {type :String}, //small or large
     price : {type : String},
-    discount : {type : String},
+    discount : {type : Float32Array},
     availability : {type : String},
      
 },{

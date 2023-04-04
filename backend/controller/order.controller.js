@@ -64,6 +64,20 @@ const addOrder = async (req, res) => {
       })
       .catch((error) => res.status(400).json("Error: " + error));
   };
+
+  const updateOrderStatus = async (req, res) => {
+    Order.findByIdAndUpdate(req.params.id)
+      .then((existingOrder) => {
+       
+        existingOrder.orderStatus = req.body.orderStatus;
+        
+        existingOrder
+          .save()
+          .then(() => res.json('Order Status updated!'))
+          .catch((error) => res.status(400).json("Error: " + error));
+      })
+      .catch((error) => res.status(400).json("Error: " + error));
+  };
   
   const deleteOrder = async (req, res) => {
     Order.findByIdAndDelete(req.params.id)
@@ -79,5 +93,6 @@ const addOrder = async (req, res) => {
     getOrderById,
     updateOrder,
     deleteOrder,
+    updateOrderStatus
    
   }

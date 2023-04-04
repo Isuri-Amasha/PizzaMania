@@ -14,7 +14,7 @@ const orderSchema = new Schema({
     orderFor : {type : String, required : true}, //delivery, takeaway, dinein
     deliveryAddress : {type : String},
     amount : {type : String, required : true},
-    orderStatus : {type : String,}
+    orderStatus : {type : String,} //order taken, order processing, order delivering, order completed
     
      
 },{

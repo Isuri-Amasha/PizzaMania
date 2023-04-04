@@ -1,5 +1,6 @@
 const Employee = require("../models/employee.model");
 
+//add employee function
 const addEmployee = async (req, res) => {
     const { empID, fullName, contactNo, email, address, position } =
       req.body;
