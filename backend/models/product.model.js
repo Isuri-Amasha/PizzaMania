@@ -11,7 +11,7 @@ const productSchema = new Schema({
     price : {type : String},
     discount : {type : Number},
     availability : {type : String},
-     
+
 },{
         timestamps : true,
     
