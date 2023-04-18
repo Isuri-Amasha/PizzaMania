@@ -8,6 +8,7 @@ const {
     updateCustomer,
     getCustomerById,
     deleteCustomer,
+   
     // scheduleByEmployee
    
   } = require("../controller/customer.controller");
@@ -21,5 +22,7 @@ const {
   router.put("/:id", updateCustomer);
 
   router.delete("/:id", deleteCustomer);
+
+ 
 
 module.exports = router;

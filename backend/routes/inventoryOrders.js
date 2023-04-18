@@ -8,6 +8,7 @@ const {
     getInventoryOrdersById,
     updateInventoryOrders,
     deleteInventoryOrder,
+    updateStatus
    
   } = require("../controller/inventoryOrders.controller");
   
@@ -35,6 +36,8 @@ const {
   //@desc   delete news
   //@access Private
   router.delete("/:id", deleteInventoryOrder);
+
+  router.put("/status/:id", updateStatus);
 
   
   

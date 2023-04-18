@@ -36,6 +36,7 @@ const addCustomer = async (req, res) => {
     }
   };
 
+
   const updateCustomer = async (req, res) => {
     Customer.findByIdAndUpdate(req.params.id)
       .then((existingCustomer) => {
@@ -67,5 +68,6 @@ const addCustomer = async (req, res) => {
     getCustomerById,
     updateCustomer,
     deleteCustomer,
+   
    
   }

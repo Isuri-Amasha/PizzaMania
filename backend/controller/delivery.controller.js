@@ -21,7 +21,7 @@ const addDelivery = async (req, res) => {
   
     await delivery
       .save()
-      .then(() => res.json('Delivery added!'))
+      .then(() => res.json(delivery._id))
       .catch((error) => res.status(400).json("Error: " + error));
   };
 
@@ -74,6 +74,20 @@ const addDelivery = async (req, res) => {
       })
       .catch((error) => res.status(400).json("Error: " + error));
   };
+
+  const updateDeliveryStatus = async (req, res) => {
+    Delivery.findByIdAndUpdate(req.params.id)
+      .then((existingDelivery) => {
+       
+        existingDelivery.orderStatus = req.body.orderStatus;
+        
+        existingDelivery
+          .save()
+          .then(() => res.json('Delivery Status updated!'))
+          .catch((error) => res.status(400).json("Error: " + error));
+      })
+      .catch((error) => res.status(400).json("Error: " + error));
+  };
   
   module.exports = {
     addDelivery,
@@ -81,5 +95,6 @@ const addDelivery = async (req, res) => {
     getDeliveryById,
     updateDelivery,
     deleteDelivery,
+    updateDeliveryStatus
    
   }

@@ -1,7 +1,7 @@
 const InventoryOrders = require("../models/inventoryOrders.model");
 
 const addInventoryOrders = async (req, res) => {
-    const { productID, productName, productCategory, availableQuantity, requestedQuantity } =
+    const { productID, productName, productCategory, availableQuantity, requestedQuantity,status } =
       req.body;
   
     const inventoryOrders = new InventoryOrders({
@@ -9,7 +9,8 @@ const addInventoryOrders = async (req, res) => {
         productName,
         productCategory,
         availableQuantity,
-        requestedQuantity
+        requestedQuantity,
+        status
     });
   
     await inventoryOrders
@@ -44,7 +45,7 @@ const addInventoryOrders = async (req, res) => {
         existingInventoryOrders.productCategory = req.body.productCategory;
         existingInventoryOrders.availableQuantity = req.body.availableQuantity;
         existingInventoryOrders.requestedQuantity = req.body.requestedQuantity;
-      
+        existingInventoryOrders.status = req.body.status;
         
         existingInventoryOrders
           .save()
@@ -55,9 +56,23 @@ const addInventoryOrders = async (req, res) => {
   };
   
   const deleteInventoryOrder = async (req, res) => {
-    InventoryOrder.findByIdAndDelete(req.params.id)
+    InventoryOrders.findByIdAndDelete(req.params.id)
       .then((deletedInventoryOrder) => {
         res.json('Inventory Order deleted');
+      })
+      .catch((error) => res.status(400).json("Error: " + error));
+  };
+
+  const updateStatus = async (req, res) => {
+    InventoryOrders.findByIdAndUpdate(req.params.id)
+      .then((existingInventoryOrders) => {
+       
+        existingInventoryOrders.status = req.body.status;
+        
+        existingInventoryOrders
+          .save()
+          .then(() => res.json('Inventory Order updated!'))
+          .catch((error) => res.status(400).json("Error: " + error));
       })
       .catch((error) => res.status(400).json("Error: " + error));
   };
@@ -68,5 +83,6 @@ const addInventoryOrders = async (req, res) => {
     getInventoryOrdersById,
     updateInventoryOrders,
     deleteInventoryOrder,
+    updateStatus
    
   }

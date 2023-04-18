@@ -29,6 +29,9 @@ const InventoryOrdersRouter = require('./routes/inventoryOrders');
 const ProductRouter = require('./routes/product');
 const DeliveryRouter = require('./routes/delivery');
 const SalaryRouter = require('./routes/salary');
+const UserRouter = require('./routes/user');
+const scheduleRequest = require('./routes/scheduleRequest');
+
 
 app.use('/employee', employeeRouter);
 app.use('/workingSchedule', workingScheduleRouter);
@@ -40,6 +43,9 @@ app.use('/inventoryOrders', InventoryOrdersRouter);
 app.use('/product', ProductRouter);
 app.use('/delivery', DeliveryRouter);
 app.use('/salary', SalaryRouter);
+app.use('/user', UserRouter);
+app.use('/scheduleRequest',scheduleRequest);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port:-${port}`);

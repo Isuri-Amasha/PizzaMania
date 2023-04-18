@@ -8,6 +8,7 @@ const {
     getDeliveryById,
     updateDelivery,
     deleteDelivery,
+    updateDeliveryStatus
    
   } = require("../controller/delivery.controller");
   
@@ -35,6 +36,9 @@ const {
 //   //@desc   delete news
 //   //@access Private
   router.delete("/:id", deleteDelivery);
+
+
+  router.put("/status/:id", updateDeliveryStatus);
 
   
   
