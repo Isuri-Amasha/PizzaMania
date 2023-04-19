@@ -10,8 +10,6 @@ const inventoryOrdersSchema = new Schema({
     requestedQuantity : {type : String, required : true},
     status:{type : String, required : true}
     
-    // workingSchedule : {type: mongoose.Schema.Types.ObjectId, ref:'workingSchedule'}
-    
      
 },{
         timestamps : true,

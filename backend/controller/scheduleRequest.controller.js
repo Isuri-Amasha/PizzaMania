@@ -87,35 +87,6 @@ const addScheduleRequest = async (req, res) => {
       })
       .catch((error) => res.status(400).json("Error: " + error));
   };
-
-//   const updateScheduleStatusAndClockOut = async (req, res) => {
-//     workingSchedule.findByIdAndUpdate(req.params.id)
-//       .then((existingSchedule) => {
-       
-//         existingSchedule.clockOut = req.body.clockOut;
-//         existingSchedule.status = req.body.status;
-        
-//         existingSchedule
-//           .save()
-//           .then(() => res.json('Schedule Status updated!'))
-//           .catch((error) => res.status(400).json("Error: " + error));
-//       })
-//       .catch((error) => res.status(400).json("Error: " + error));
-//   };
-
-//   const scheduleByEmployee= async (req,res) => {
-//     const scheduleData = workingSchedule.find({_id:req.body.schedule_id}).populate('empID')
-//     .then((deletedSchedule) => {
-//     res.send(scheduleData);
-//     })
-//     .catch((error) => res.status(400).json("Error: " + error));
-// };
-
-// const scheduleWithEmployee = async (req,res) => {
-//   const scheduleData = await workingSchedule.find({_id:req.body.schedule_id}).populate('empID');
-
-//   res.send(scheduleData);
-// };
   
   module.exports = {
     addScheduleRequest,
@@ -124,9 +95,5 @@ const addScheduleRequest = async (req, res) => {
     getScheduleRequestById,
     deleteScheduleRequest,
     updateStatus
-    // updateScheduleStatusAndClockIn,
-    // updateScheduleStatusAndClockOut,
-    // // scheduleByEmployee
-    // scheduleWithEmployee
    
   }

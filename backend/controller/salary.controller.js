@@ -59,34 +59,6 @@ const addSalary = async (req, res) => {
       })
       .catch((error) => res.status(400).json("Error: " + error));
   };
-
-//   const calculateSalary = async (req, res) => {
-//     Salary.findById(req.params.id)
-//       .then((deletedSalary) => {
-//         const OT = deletedSalary.otRate;
-//         const calculatedSalary = OT * 10
-//         res.json(calculatedSalary);
-//       })
-//       .catch((error) => res.status(400).json("Error: " + error));
-//   };
-
-//   const getAndCalcSalary = function(options) {
-
-//     var calculationData = req.body;
-
-//     for( var i = calculationData.salary.length -1 ; i >= 0; i--){
-
-//         var sal = calculationData.salary[i];
-
-//         var calculationTotal = {};
-
-//         calculationTotal.empID = sal.empId;
-//         calculationTotal.OT = sal.otRate;
-
-
-//         for(var j = overate.otTime -1)
-//     }
-//   }
   
   module.exports = {
     addSalary,
@@ -94,8 +66,7 @@ const addSalary = async (req, res) => {
     getSalaryById,
     updateSalary,
     deleteSalary,
-    // calculateSalary,
-    // getAndCalcSalary
+  
 
    
   }

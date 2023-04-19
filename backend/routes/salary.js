@@ -39,12 +39,6 @@ const {
   //@access Private
   router.delete("/:id", deleteSalary);
 
-
-//   router.get("/calculate/:id", calculateSalary);
-
-
-//   router.get("/calc", getAndCalcSalary);
-
   
   
   module.exports = router;

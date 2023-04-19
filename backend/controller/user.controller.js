@@ -34,18 +34,6 @@ const addUser = async (req, res) => {
         res.json("notexist")
       }
 
-    // const user = new User({
-    //     NIC,
-    //     userRole,
-    //     password,
-        
-      
-    // });
-  
-    // await user
-    //   .save()
-    //   .then(() => res.json('User added!'))
-    //   .catch((error) => res.status(400).json("Error: " + error));
   };
 
   const getUsers = async (req, res) => {

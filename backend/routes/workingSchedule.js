@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { response } = require('express');
 let workingSchedule = require("../models/workingSchedule.model");
-const workingController = require("./schedule.controller");
+const workingController = require("../controller/workingSchedule.controller");
 
 const {
     addSchedule,

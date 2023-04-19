@@ -7,9 +7,6 @@ const userSchema = new Schema({
     userRole: {type :String, required : true},
     password: {type :String, required : true}
     
-    
-    // workingSchedule : {type: mongoose.Schema.Types.ObjectId, ref:'workingSchedule'}
-    
      
 },{
         timestamps : true,

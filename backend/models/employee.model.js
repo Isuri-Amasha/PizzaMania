@@ -10,8 +10,6 @@ const employeeSchema = new Schema({
     address: {type :String, required : true},
     position : {type : String, required : true},
     
-    // workingSchedule : {type: mongoose.Schema.Types.ObjectId, ref:'workingSchedule'}
-    
      
 },{
         timestamps : true,

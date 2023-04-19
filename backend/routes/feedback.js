@@ -10,8 +10,6 @@ const {
     deleteFeedback,
     FeedbackWithCustomer,
     FeedbackWithEmployee,
-    // FeedbackWith
-    // scheduleByEmployee
    
   } = require("../controller/feedback.controller");
 
@@ -28,7 +26,5 @@ const {
   router.post('/getFeedbackWithUser', FeedbackWithCustomer)
 
   router.post('/getFeedbackWithEmployee', FeedbackWithEmployee)
-
-//   router.post('/getFeedbackWith', FeedbackWith)
 
 module.exports = router;

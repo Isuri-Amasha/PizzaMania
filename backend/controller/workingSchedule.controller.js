@@ -113,12 +113,9 @@ const addSchedule = async (req, res) => {
   const updateExistingSchedule = async (req, res) => {
     workingSchedule.findByIdAndUpdate(req.params.id)
       .then((existingSchedule) => {
-        // existingSchedule.empID = req.body.empID;
         existingSchedule.date = req.body.date;
         existingSchedule.sTime = req.body.sTime;
         existingSchedule.eTime = req.body.eTime;
-        // existingSchedule.clockIn = req.body.clockIn;
-        // existingSchedule.clockOut = req.body.clockOut;
         existingSchedule.status = req.body.status;
         
         existingSchedule
@@ -129,14 +126,6 @@ const addSchedule = async (req, res) => {
       .catch((error) => res.status(400).json("Error: " + error));
   };
   
-
-//   const scheduleByEmployee= async (req,res) => {
-//     const scheduleData = workingSchedule.find({_id:req.body.schedule_id}).populate('empID')
-//     .then((deletedSchedule) => {
-//     res.send(scheduleData);
-//     })
-//     .catch((error) => res.status(400).json("Error: " + error));
-// };
 
 const scheduleWithEmployee = async (req,res) => {
   const scheduleData = await workingSchedule.find({_id:req.body.schedule_id}).populate('empID');

@@ -3,10 +3,9 @@ const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
 const scheduleRequestSchema = new Schema({
-    // empID : {type : mongoose.Schema.Types.ObjectId, ref: 'Employee'},
+   
     scheduleID : {type:String},
     empID : {type : String},
-    // empID : {type : String, required : true},
     date: {type :String, required : true},
     sTime : {type : String, required : true},
     eTime : {type : String, required : true},

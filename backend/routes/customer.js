@@ -9,8 +9,6 @@ const {
     getCustomerById,
     deleteCustomer,
    
-    // scheduleByEmployee
-   
   } = require("../controller/customer.controller");
 
   router.post("/", addCustomer);

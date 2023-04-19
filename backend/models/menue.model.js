@@ -8,8 +8,6 @@ const menueSchema = new Schema({
     size: {type :String, required : true},
     price : {type : String, required : true},
     onSale : {type : String, required : true},
-   
-    // workingSchedule : {type: mongoose.Schema.Types.ObjectId, ref:'workingSchedule'}
     
      
 },{

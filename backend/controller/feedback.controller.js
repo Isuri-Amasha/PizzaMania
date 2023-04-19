@@ -69,12 +69,6 @@ const addFeedback = async (req, res) => {
   
     res.send(feedbackData);
   };
-
-//   const FeedbackWith = async (req,res) => {
-//     const feedbackData = await Feedback.find({_id:req.body.user}).populate('userContact','empID');
-  
-//     res.send(feedbackData);
-//   };
   
   module.exports = {
     addFeedback,
@@ -84,6 +78,5 @@ const addFeedback = async (req, res) => {
     deleteFeedback,
     FeedbackWithCustomer,
     FeedbackWithEmployee,
-    // FeedbackWith
    
   }

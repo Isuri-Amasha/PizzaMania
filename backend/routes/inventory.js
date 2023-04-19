@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { response } = require('express');
 let Inventory = require("../models/inventory.model");
-// let EmployeeController = require("./employee.controller");
 
 const {
     addInventory,
