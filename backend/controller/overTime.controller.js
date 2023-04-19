@@ -28,8 +28,8 @@ const addOT = async (req, res) => {
 
   const getOTById = async (req, res) => {
     try {
-      const schedule = await overTime.findById(req.params.id);
-      res.json(schedule);
+      const ot = await overTime.findById(req.params.id);
+      res.json(ot);
     } catch (error) {
       res.status(500).send("Server Error" + error);
     }

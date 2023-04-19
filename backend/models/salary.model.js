@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const salarySchema = new Schema({
     empId: { type: String, required: true },
     empName: { type: String, required: true },
-    basicSalary: { type: Number, required: true },
-    otRate: { type: Number, required: true },
+    basicSalary: { type: String, required: true },
+    otRate: { type: String, required: true },
 });
 
 const Salary = mongoose.model('Salary', salarySchema);

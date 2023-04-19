@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { response } = require('express');
 let overTime = require("../models/overTime.model");
-const overTimeController = require("./overTime.controller");
+const overTimeController = require("../controller/overTime.controller");
 
 const {
     addOT,
