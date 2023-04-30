@@ -1,16 +1,19 @@
 const Order = require("../models/order.model");
 
 const addOrder = async (req, res) => {
-    const { customer, item1, quantity1, item2, quantity2,item3, quantity3,orderFor, deliveryAddress,amount, orderStatus } =
+    const { customer, item1, size1, quantity1, item2, size2,quantity2,item3, size3,quantity3,orderFor, deliveryAddress,amount, orderStatus } =
       req.body;
   
     const order = new Order({
         customer,
         item1,
+        size1,
         quantity1,
         item2,
+        size2,
         quantity2,
         item3,
+        size3,
         quantity3,
         orderFor,
         deliveryAddress,
@@ -20,7 +23,7 @@ const addOrder = async (req, res) => {
   
     await order
       .save()
-      .then(() => res.json('Order added!'))
+      .then(() => res.json(order._id))
       .catch((error) => res.status(400).json("Error: " + error));
   };
 
@@ -47,10 +50,13 @@ const addOrder = async (req, res) => {
       .then((existingOrder) => {
         existingOrder.customer = req.body.customer;
         existingOrder.item1 = req.body.item1;
+        existingOrder.size1 = req.body.size1;
         existingOrder.quantity1 = req.body.quantity1;
         existingOrder.item2 = req.body.item2;
+        existingOrder.size2 = req.body.size2;
         existingOrder.quantity2 = req.body.quantity2;
         existingOrder.item3 = req.body.iteme3;
+        existingOrder.size3 = req.body.size3;
         existingOrder.quantity3 = req.body.quantity3;
         existingOrder.orderFor = req.body.orderFor;
         existingOrder.deliveryAddress = req.body.deliveryAddress;
