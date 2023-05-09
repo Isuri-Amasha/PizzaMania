@@ -1,10 +1,11 @@
 const Delivery = require("../models/delivery.model");
 
 const addDelivery = async (req, res) => {
-    const { orderId, customer, item1, quantity1, item2, quantity2,item3, quantity3, deliveryAddress,amount, orderStatus, assignedEmp } =
+    const { deliveryId,orderId, customer, item1, quantity1, item2, quantity2,item3, quantity3, deliveryAddress,amount, orderStatus, assignedEmp } =
       req.body;
   
     const delivery = new Delivery({
+      deliveryId,
         orderId,
         customer,
         item1,
@@ -46,6 +47,7 @@ const addDelivery = async (req, res) => {
   const updateDelivery = async (req, res) => {
     Delivery.findByIdAndUpdate(req.params.id)
       .then((existingDelivery) => {
+        existingDelivery.deliveryId = req.body.deliveryId;
         existingDelivery.orderId = req.body.orderId;
         existingDelivery.customer = req.body.customer;
         existingDelivery.item1 = req.body.item1;

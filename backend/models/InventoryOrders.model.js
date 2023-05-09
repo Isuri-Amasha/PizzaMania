@@ -18,6 +18,6 @@ const inventoryOrdersSchema = new Schema({
 });
 
 
-const InventoryOrders = mongoose.model("InventoryOrders", inventoryOrdersSchema);
+const InventoryOrders = mongoose.model("InventoryOrders1", inventoryOrdersSchema);
 
 module.exports = InventoryOrders;

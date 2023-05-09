@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const deliverySchema = new Schema({
     //delivery id is auto generated
+    deliveryId : {type : String, required : true},
     orderId : {type : String, required : true},
     customer : {type : String, required : true},
     item1 : {type : String,required : true},
