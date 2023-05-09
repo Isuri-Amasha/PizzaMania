@@ -3,6 +3,7 @@ const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
 const inventoryOrdersSchema = new Schema({
+    orderId :{type : String},
     productID : {type : String},
     productName: {type :String},
     productCategory : {type : String},

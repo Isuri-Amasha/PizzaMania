@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
     //order id is auto generated
+    orderId :{type : String, required : true},
     customer : {type : String, required : true},
     item1 : {type : String,required : true},
     size1 : {type : String,required : true},

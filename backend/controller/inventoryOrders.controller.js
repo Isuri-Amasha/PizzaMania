@@ -1,10 +1,11 @@
-const InventoryOrders = require("../models/inventoryOrders.model");
+const InventoryOrders = require("../models/InventoryOrders.model");
 
 const addInventoryOrders = async (req, res) => {
-    const { productID, productName, productCategory, availableQuantity, requestedQuantity,status } =
+    const { orderId,productID, productName, productCategory, availableQuantity, requestedQuantity,status } =
       req.body;
   
     const inventoryOrders = new InventoryOrders({
+      orderId,
         productID,
         productName,
         productCategory,
@@ -40,6 +41,7 @@ const addInventoryOrders = async (req, res) => {
   const updateInventoryOrders = async (req, res) => {
     InventoryOrders.findByIdAndUpdate(req.params.id)
       .then((existingInventoryOrders) => {
+        existingInventoryOrders.orderId = req.body.orderId;
         existingInventoryOrders.productID = req.body.productID;
         existingInventoryOrders.productName = req.body.productName;
         existingInventoryOrders.productCategory = req.body.productCategory;

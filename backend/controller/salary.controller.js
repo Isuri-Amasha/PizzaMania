@@ -1,12 +1,11 @@
 const Salary = require("../models/salary.model");
 
 const addSalary = async (req, res) => {
-    const { empId, empName, basicSalary,otRate} =
+    const { empId, basicSalary,otRate} =
       req.body;
   
     const newsalary = new Salary({
         empId,
-        empName,
         basicSalary,
         otRate
     });
@@ -38,8 +37,7 @@ const addSalary = async (req, res) => {
   const updateSalary = async (req, res) => {
     Salary.findByIdAndUpdate(req.params.id)
       .then((existingSalary) => {
-        existingSalary.empID = req.body.empID;
-        existingSalary.empName = req.body.empName;
+        existingSalary.empId = req.body.empId;
         existingSalary.basicSalary = req.body.basicSalary;
         existingSalary.otRate = req.body.otRate;
         

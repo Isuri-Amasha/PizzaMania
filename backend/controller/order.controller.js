@@ -1,10 +1,11 @@
 const Order = require("../models/order.model");
 
 const addOrder = async (req, res) => {
-    const { customer, item1, size1, quantity1, item2, size2,quantity2,item3, size3,quantity3,orderFor, deliveryAddress,amount, orderStatus } =
+    const { orderId,customer, item1, size1, quantity1, item2, size2,quantity2,item3, size3,quantity3,orderFor, deliveryAddress,amount, orderStatus } =
       req.body;
   
     const order = new Order({
+      orderId,
         customer,
         item1,
         size1,
@@ -48,6 +49,7 @@ const addOrder = async (req, res) => {
   const updateOrder = async (req, res) => {
     Order.findByIdAndUpdate(req.params.id)
       .then((existingOrder) => {
+        existingOrder.orderId = req.body.orderId;
         existingOrder.customer = req.body.customer;
         existingOrder.item1 = req.body.item1;
         existingOrder.size1 = req.body.size1;
